@@ -16,6 +16,8 @@
 </template>
 
 <script>
+    import {LoginApi} from '@/request/api'
+    import qs from 'qs'
     export default {
         name: "Login",
         data(){
@@ -33,7 +35,18 @@
         },
         methods:{
             loginfn(){
-
+                this.$refs['ruleForm'].validate(vali=>{
+                    if(vali){
+                        LoginApi(qs.stringify({
+                            username:this.ruleForm.username,
+                            password:this.ruleForm.password
+                        })).then(res=>{
+                            console.log(res);
+                        })
+                    }else {
+                        return false
+                    }
+                })
             }
         }
     }
