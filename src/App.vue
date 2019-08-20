@@ -6,12 +6,14 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+  }
 }
 </script>
 
-<style>
-  @import "assets/styles/reset.css";
+<style lang="less">
+  @import "assets/styles/reset";
 #app {
   width: 100%;
   height: 100%;

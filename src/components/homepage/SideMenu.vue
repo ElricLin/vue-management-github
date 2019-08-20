@@ -17,22 +17,17 @@
 </template>
 
 <script>
+    import {config} from '@/config/config'
     export default {
         name: "SideMenu",
         data(){
             return {
-                menudata:[
-                    {title:'系统管理',
-                    menuchildren:[
-                            {title:'部门管理',index:'department'},
-                            {title:'员工管理',index:'employee'}
-                        ]}
-                ]
+                menudata:config
             }
         },
         computed:{
             indexactive(){
-                return this.$route.path
+                return this.$route.meta.title
             }
         }
     }
